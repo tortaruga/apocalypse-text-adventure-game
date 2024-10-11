@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background: black; 
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh; 
+  color: rgb(228, 241, 231);
+  letter-spacing: .1rem; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+    width: 100%;
+    min-height: 100vh;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 1rem;  */ 
+}
+
+img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute; 
+    opacity: .8;
+}
+
+.animate {
+    animation: animate-bg 4s forwards;  
+}
+
+@keyframes animate-bg {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: .8;
+    }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .5));
+  padding: 1.5rem; 
+  backdrop-filter: blur(60px);
+  transition: height 2s; 
+  width: 100vw; 
+  height: 100vh; 
+  overflow-y: auto;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: .8;
+}
+
+.btns {
+  display: flex; 
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  flex-wrap: wrap; 
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 0 0 5px; 
+}
+
+button {
+  padding: 1rem; 
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid rgb(228, 241, 231);
+  transition: .4s;
+  border-radius: 5px;
+  background: none; 
+ color: rgb(228, 241, 231); 
+ letter-spacing: .1rem;
+ font-size: 1rem; 
+ flex-grow: 1; 
+ opacity: .8;
+}
+ 
+.btn-two, .btn-three {
+  display: none;
+}
+
+
+@media screen and (min-width: 400px) {
+    section {
+      width: clamp(600px, 90%, 300px);
+      border-radius: .5rem;
+      height: unset; 
+      transition: height .8s; 
+    }
+}
