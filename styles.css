@@ -13,21 +13,8 @@ body {
   box-sizing: border-box;
 }
 
-main {
-    width: 100%;
-    min-height: 100vh;  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* padding: 1rem;  */ 
-}
-
 img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    position: absolute; 
-    opacity: .8;
+  display: none; 
 }
 
 .animate {
@@ -49,13 +36,8 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center; 
-  background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .5));
   padding: 1.5rem; 
-  backdrop-filter: blur(60px);
-  transition: height 2s; 
-  width: 100vw; 
-  height: 100vh; 
-  overflow-y: auto;
+
 }
 
 .message {
@@ -97,11 +79,36 @@ button {
 }
 
 
-@media screen and (min-width: 400px) {
-    section {
+@media screen and (min-width: 600px) {
+  main { 
+    width: 100%;
+    min-height: 100vh;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 1rem;  */ 
+}
+
+img {
+  display: inline-block; 
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute; 
+    opacity: .8;
+}
+  section {
       width: clamp(600px, 90%, 300px);
       border-radius: .5rem;
       height: unset; 
       transition: height .8s; 
+      margin: .5rem; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
+        background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .5));
+        padding: 1.5rem; 
+        backdrop-filter: blur(5px);
     }
 }
